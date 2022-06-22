@@ -27,18 +27,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MicroserviceController {
   // 'spring-cloud-gcp-starter-logging' module provides support for
-  // associating a web request trace ID with the corresponding log entries.
-  // https://cloud.spring.io/spring-cloud-gcp/multi/multi__stackdriver_logging.html
+// associating a web request trace ID with the corresponding log entries.
+// https://cloud.spring.io/spring-cloud-gcp/multi/multi__stackdriver_logging.html
   private static final Logger logger = LoggerFactory.getLogger(MicroserviceController.class);
 
   /** Example endpoint handler. */
   @GetMapping("/")
   public @ResponseBody String index() {
-    // Example of structured logging - add custom fields
+// Example of structured logging - add custom fields
     MDC.put("logField", "custom-entry");
     MDC.put("arbitraryField", "custom-entry");
-    // Use logger with log correlation
-    // https://cloud.google.com/run/docs/logging#correlate-logs
+// Use logger with log correlation
+// https://cloud.google.com/run/docs/logging#correlate-logs
     logger.info("Structured logging example.");
     return "Hello Worldzzzz!";
   }
