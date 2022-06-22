@@ -1,0 +1,227 @@
+body, html {
+    margin: 0;
+    padding:0;
+}
+* {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #091426;
+    color: #fff;
+}
+
+.logo {
+    padding: 15px;
+    margin-bottom: 40px;
+    max-width: 350px;
+}
+
+#main-content {
+    display: flex;
+    align-items: stretch;
+}
+aside {
+    padding: 15px;
+    width: 30%;
+    background: #0E1D38;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+#buy-license-btn {
+    background: #E6332A;
+    color: #fff;
+    box-shadow: none;
+    border: 3px solid #E6332A;
+    padding: 15px;
+    width: 100%;
+    margin-top: 20px;
+    transition: ease all 400ms;
+    cursor: pointer;
+}
+
+#buy-license-btn:hover {
+    background: transparent;
+
+}
+
+
+main#planet-map {
+    width: 70%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*TABLE*/
+#planet-map table {
+    width: 100%;
+    height: auto;
+    border-spacing: 5px;
+}
+#planets td {
+    position: relative;
+}
+
+#planets td.highlight-path {
+    background: rgba(255,255,255,.3);
+    border-radius: 5px;
+}
+#planets td.highlight-path .planet {
+    opacity: 1 !important;
+    background: #38495a;
+}
+
+#planets td .planet {
+    position: relative;
+    width: 80%;
+    min-width: 25px;
+    font-size: 12px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: #E6332A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease all 400ms;
+}
+
+#planets td .planet:hover {
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+#planets td:not(.space-shipyard) .planet:not(.max-mining-planet) {
+    opacity: .2;
+}
+
+#planets td.space-shipyard {
+
+}
+#planets td.space-shipyard  .planet::before {
+    content: "H";
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#planets td .planet.selected-robot-position {
+    background: #00993A;
+    opacity: 1 !important;
+}
+
+#planets td .planet.selected, #planets td.highlight-path .planet.selected {
+    background: #E6C840;
+    color: #0E1D38;
+    font-weight: bold;
+    opacity: 1 !important;
+}
+
+
+/* Notifications */
+
+.alert-box {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: lightgrey;
+    border: 1px solid grey;
+    color: black;
+    padding: 15px;
+    border-radius: 5px;
+    max-width: 400px;
+    transition: cubic-bezier(0.25, 0.1, 0.24, 2.55) all 500ms;
+}
+.alert-box h4 {
+    margin: 0;
+    margin-bottom: 0.4em;
+}
+
+.alert-box.new-notification {
+    border: 1px solid #E6332A;
+    box-shadow: 0 10px 25px rgba(230, 51, 42,.3);
+    transform: scale(1.1);
+}
+
+/* Robot List*/
+
+#robots {
+    background: rgba(0,0,0,.3);
+    padding: 15px;
+}
+#robots ul {
+    margin: 0;
+    padding: 0;
+}
+
+#robots ul#robot-list li {
+    list-style: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(0,0,0,.4);
+    transition: ease all 400ms;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+#robots ul#robot-list li:hover {
+    background: rgba(0, 0, 0, .5);
+    cursor: pointer;
+}
+
+#robots ul#robot-list li > div:first-child {
+    width: 70%;
+}
+#robots ul#robot-list li div .title {
+    font-weight: bolder;
+    display: block;
+}
+#robots ul#robot-list li div .info {
+    font-size: 80%;
+}
+#robots ul#robot-list li > div:last-child {
+    width: 30%;
+    background: rgba(0,0,0,.2);
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+#robots ul#robot-list li > div.actions button {
+    border: 0;
+    box-shadow: none;
+    border-radius: 5px;
+    padding: 10px;
+    aspect-ratio: 1/1;
+    letter-spacing: 2px;
+    background: #38495a;
+    color: #fff;
+    transition: ease all 400ms;
+}
+#robots ul#robot-list li > div.actions button:hover {
+    cursor: pointer;
+    background: #0E1D38;
+}
+
+#robots ul#robot-list li > div.actions button.move {
+    margin-right: 10px;
+}
+
+
+#robots ul#robot-list li.selected {
+    background: #00993A;
+}
