@@ -40,12 +40,18 @@ public class MicroserviceController {
     // Use logger with log correlation
     // https://cloud.google.com/run/docs/logging#correlate-logs
     logger.info("Structured logging example.");
-    return "Hello Worldzzzz!";
+    return "Hallo Welt! <br>Diese Seite wurde von Google Cloud Run bereitgestellt.";
   }
 
   /** Another example endpoint handler. */
   @GetMapping("/cool")
   public @ResponseBody String cool() {
-    return "Cooooool! Another endpoint!";
+    return "Cooooool! Ein anderer Endpoint!";
+  }
+
+  /** Another example endpoint handler. */
+  @GetMapping("/luca")
+  public @ResponseBody String luca() {
+    return "<h1>Hi Luca, wie geht's dir heute?</h1>";
   }
 }
