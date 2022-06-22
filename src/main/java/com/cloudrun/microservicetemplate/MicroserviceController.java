@@ -42,4 +42,10 @@ public class MicroserviceController {
     logger.info("Structured logging example.");
     return "Hello Worldzzzz!";
   }
+
+  /** Another example endpoint handler. */
+  @GetMapping("/cool")
+  public @ResponseBody String cool() {
+    return "Cooooool! Another endpoint!";
+  }
 }
